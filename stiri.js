@@ -37,7 +37,8 @@ const stiri = [
         <p>Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoza pentru Transilvania în săptămâna 2-8 iunie: Începând din 2 iunie,</p>
         <img src="https://timponline.ro/wp-content/uploads/2025/05/cer-nori-vreme-meteo-p-2-990x654.jpg" alt="Iluminat modern" style="width:100%; border-radius:10px; margin:10px 0;"> 
         <p>valorile termice vor intra pe o pantă ascendentă, astfel încât până la finalul săptămânii se vor înregistra temperaturi mai apropiate de mediile climatologice.</p>
-        <p>Maximele vor ajunge, în medie, la 22…27 de grade, iar minimele vor fi de 10…13 grade. Pot fi intervale cu averse.</p>`
+        <p>Maximele vor ajunge, în medie, la 22…27 de grade, iar minimele vor fi de 10…13 grade. Pot fi intervale cu averse.</p>
+        `
       }
     ];
   const main = document.getElementById("main-content");
