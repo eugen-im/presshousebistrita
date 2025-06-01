@@ -1,23 +1,29 @@
 // Array cu știrile
 const stiri = [
     {
-      id: 1,
-      titlu: "Primăria anunță un nou proiect de infrastructură",
-      rezumat: "Reabilitarea a 10 km de drumuri și modernizarea iluminatului public...",
-      continut: "Proiectul include reabilitarea a 10 kilometri de drumuri și modernizarea iluminatului public în cartierele noi. Lucrările vor începe în luna iulie și vor dura 6 luni. Se estimează un buget de 12 milioane de lei."
-    },
-    {
-      id: 2,
-      titlu: "Festivalul de vară revine în centrul orașului",
-      rezumat: "Concerte, târguri tradiționale și activități pentru copii...",
-      continut: "Festivalul va avea loc între 15 și 20 iulie, cu scene în Piața Centrală, spectacole de dans, ateliere pentru copii și peste 20 de comercianți tradiționali. Invitați speciali: Subcarpați, Andra, Voltaj."
-    },
-    {
-      id: 3,
-      titlu: "Un nou centru medical s-a deschis în zona industrială",
-      rezumat: "Oferă medicină generală, stomatologie și analize gratuite pentru pensionari...",
-      continut: "Centrul funcționează de luni până vineri între orele 8-18 și este dotat cu aparatură modernă. Este primul centru care oferă analize gratuite pentru toți pensionarii din județ, pe baza programării."
-    },
+        id: 1,
+        titlu: "Primăria anunță un nou proiect de infrastructură",
+        rezumat: "Reabilitarea a 10 km de drumuri și modernizarea iluminatului public...",
+        continut: "Proiectul include reabilitarea a 10 kilometri de drumuri și modernizarea iluminatului public în cartierele noi. Lucrările vor începe în luna iulie și vor dura 6 luni. Se estimează un buget de 12 milioane de lei."
+      },
+      {
+        id: 2,
+        titlu: "Festivalul de vară revine în centrul orașului",
+        rezumat: "Concerte, târguri tradiționale și activități pentru copii...",
+        continut: "Festivalul va avea loc între 15 și 20 iulie, cu scene în Piața Centrală, spectacole de dans, ateliere pentru copii și peste 20 de comercianți tradiționali. Invitați speciali: Subcarpați, Andra, Voltaj."
+      },
+      {
+        id: 3,
+        titlu: "Un nou centru medical s-a deschis în zona industrială",
+        rezumat: "Oferă medicină generală, stomatologie și analize gratuite pentru pensionari...",
+        continut: "Centrul funcționează de luni până vineri între orele 8-18 și este dotat cu aparatură modernă. Este primul centru care oferă analize gratuite pentru toți pensionarii din județ, pe baza programării."
+      },
+      {
+        id: 4,
+        titlu: "Școala de vară pentru elevi talentați",
+        rezumat: "Peste 100 de elevi participă la ateliere educaționale și creative în luna august...",
+        continut: "Programul include sesiuni de robotică, arte vizuale, jurnalism, scriere creativă și dezvoltare personală. Școala se desfășoară între 1 și 14 august, în parteneriat cu Inspectoratul Școlar."
+      }
   ];
   const main = document.getElementById("main-content");
   
