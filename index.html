@@ -2,54 +2,77 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Press House Bistrița</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
     }
+
     header {
-      background-color: #FF0000;
+      background-color: #d10000; /* roșu intens */
       color: white;
       padding: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    header img {
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 60px;
       height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
     }
-    nav a {
-      color: white;
+
+    .site-title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
       margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
       text-decoration: none;
+      font-weight: bold;
     }
-    nav a:hover {
+
+    nav ul li a:hover {
       text-decoration: underline;
-    }
-    main {
-      padding: 20px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo-title">
-    <img src="logo.png" alt="Logo" style="height: 100px; width: 100px; border-radius: 50%;">
-    <div class="site-title">Press House Bistrița</div>
+      <img src="logo.png" alt="Logo" class="logo">
+      <div class="site-title">Press House Bistrița</div>
     </div>
     <nav>
-      <a href="#">Acasă</a>
-      <a href="#">Știri</a>
-      <a href="#">Evenimente</a>
-      <a href="#">Contact</a>
+      <ul>
+        <li><a href="#">Acasă</a></li>
+        <li><a href="#">Știri</a></li>
+        <li><a href="#">Evenimente</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
   </header>
-  <main>
-    <h1>Bine ai venit la Press House Bistrița!</h1>
-    <p>Publicația ta locală de încredere pentru știri și evenimente din Bistrița.</p>
-  </main>
+
 </body>
 </html>
