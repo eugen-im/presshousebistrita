@@ -76,7 +76,6 @@ const stiri = [
         ${stire.continut} <!-- Afișează HTML direct -->
       </div>
     `;
-    `;
   }
   
   // Afișăm lista la început
