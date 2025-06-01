@@ -1,95 +1,80 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8">
-  <title>Adaugă Știre</title>
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 800px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #preview {
-      margin-top: 30px;
-      background: #eee;
-      padding: 15px;
-      white-space: pre-wrap;
-      border-radius: 5px;
-    }
-  </style>
-</head>
-<body>
+// Array cu știrile
+const stiri = [
+    {
+        id: 1,
+        titlu: "Primăria anunță un nou proiect de infrastructură",
+        rezumat: "Reabilitarea a 10 km de drumuri și modernizarea iluminatului public...",
+        continut: "Proiectul include reabilitarea a 10 kilometri de drumuri și modernizarea iluminatului public în cartierele noi. Lucrările vor începe în luna iulie și vor dura 6 luni. Se estimează un buget de 12 milioane de lei.",
+        imagine: "https://igfgrup.ro/wp-content/uploads/2023/03/Iluminat-public-si-festiv-1.jpg"
+      },
+      {
+        id: 2,
+        titlu: "Festivalul de vară revine în centrul orașului",
+        rezumat: "Concerte, târguri tradiționale și activități pentru copii...",
+        continut: "Festivalul va avea loc între 15 și 20 iulie, cu scene în Piața Centrală, spectacole de dans, ateliere pentru copii și peste 20 de comercianți tradiționali. Invitați speciali: Subcarpați, Andra, Voltaj."
+      },
+      {
+        id: 3,
+        titlu: "Un nou centru medical s-a deschis în zona industrială",
+        rezumat: "Oferă medicină generală, stomatologie și analize gratuite pentru pensionari...",
+        continut: "Centrul funcționează de luni până vineri între orele 8-18 și este dotat cu aparatură modernă. Este primul centru care oferă analize gratuite pentru toți pensionarii din județ, pe baza programării."
+      },
+      {
+        id: 4,
+        titlu: "Școala de vară pentru elevi talentați",
+        rezumat: "Peste 100 de elevi participă la ateliere educaționale și creative în luna august...",
+        continut: "Programul include sesiuni de robotică, arte vizuale, jurnalism, scriere creativă și dezvoltare personală. Școala se desfășoară între 1 și 14 august, în parteneriat cu Inspectoratul Școlar.",
+        imagine: "https://reptiland.ro/wp-content/uploads/2024/07/scoala-de-vara-reptiland.png"
+      },
+      {
+        id: 5,
+        titlu: "Cod galben de ploi în Bistrița-Năsăud",
+        rezumat: "Meteorologii anunță ploi torențiale și descărcări electrice în următoarele 24 de ore...",
+        continut: `În Carpații Orientali, estul Carpaților Meridionali și local în Munții Apuseni, Maramureș, estul Transilvaniei, nord-vestul Moldovei și nordul Munteniei instabilitatea atmosferică se va accentua și se va manifesta prin averse torențiale, descărcări electrice, intensificări de scurtă durată ale vântului (rafale în general de 50…70 km/h) și pe alocuri vijelii și căderi de grindină.
+Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoza pentru Transilvania în săptămâna 2-8 iunie: Începând din 2 iunie, valorile termice vor intra pe o pantă ascendentă, astfel încât până la finalul săptămânii se vor înregistra temperaturi mai apropiate de mediile climatologice. Maximele vor ajunge, în medie, la 22…27 de grade, iar minimele vor fi de 10…13 grade. Pot fi intervale cu averse.`,
+        imagine: `https://timponline.ro/wp-content/uploads/2025/05/cer-nori-vreme-meteo-p-2-990x654.jpg`,
+        continut: `Acesta este un continut de test.`,
+        imagine: "https://epitesti.ro/wp-content/uploads/2024/09/vreme-extrema-playtech.webp"
+      }
+    ];
+  const main = document.getElementById("main-content");
 
-  <h2>Adaugă o Știre Nouă</h2>
-  <form id="form-stire">
-    <input type="text" id="titlu" placeholder="Titlu știre" required>
-    <textarea id="editor"></textarea>
-    <button type="submit">Salvează Știrea</button>
-  </form>
-
-  <div id="preview"></div>
-
-  <script>
-    tinymce.init({
-      selector: '#editor',
-      plugins: 'lists link image media',
-      toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image media',
-      height: 300
-    });
-
-    document.getElementById('form-stire').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const titlu = document.getElementById('titlu').value;
-      const continut = tinymce.get("editor").getContent();
-
-      const stireNoua = {
-        id: Date.now(),
-        titlu: titlu,
-        rezumat: continut.replace(/<[^>]+>/g, '').substring(0, 100) + "...",
-        continut: continut
-      };
-
-      let stiriExistente = JSON.parse(localStorage.getItem("stiri")) || [];
-      stiriExistente.push(stireNoua);
-      localStorage.setItem("stiri", JSON.stringify(stiriExistente));
-
-      console.log("Stire salvată:", stireNoua);
-
-      document.getElementById("preview").innerHTML = `
-        <h3>Previzualizare:</h3>
-        <h4>${stireNoua.titlu}</h4>
-        ${stireNoua.continut}
-      `;
-
-      document.getElementById('form-stire').reset();
-      tinymce.get("editor").setContent("");
-    });
-  </script>
-
-</body>
-</html>
+  function afiseazaListaStiri() {
+    main.innerHTML = `
+      <h1>Ultimele Știri</h1>
+      <div class="news-grid">
+        ${stiri.map(stire => `
+          <div class="news-card" onclick="afiseazaStire(${stire.id})">
+            ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="card-image">` : ''}
+            <h2>${stire.titlu}</h2>
+            <p>${stire.rezumat}</p>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+  
+  // Afișează o știre completă
+  function afiseazaStire(id) {
+    const stire = stiri.find(s => s.id === id);
+    if (!stire) return;
+  
+    const continutCuParagrafe = stire.continut
+      .split('\n\n')
+      .map(p => `<p>${p}</p>`)
+      .join('');
+  
+    main.innerHTML = `
+      <button onclick="afiseazaListaStiri()">⬅ Înapoi</button>
+      <div class="news-full">
+        <h1>${stire.titlu}</h1>
+        ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="full-image">` : ''}
+        ${continutCuParagrafe}
+      </div>
+    `;
+  }
+  
+  // Afișăm lista la început
+  document.addEventListener("DOMContentLoaded", function () {
+    afiseazaListaStiri();
+  });
