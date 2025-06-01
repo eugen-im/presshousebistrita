@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Știri - Press House Bistrița</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #d10000;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .site-title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #d10000;
+      margin-bottom: 30px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .news-card h2 {
+      color: #333;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .news-card p {
+      color: #555;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">
+      <img src="logo.png" alt="Logo" class="logo">
+      <div class="site-title">Press House Bistrița</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="stiri.html">Știri</a></li>
+        <li><a href="evenimente.html">Evenimente</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Ultimele Știri</h1>
+    <div class="news-grid">
+      <div class="news-card">
+        <h2>Primăria anunță un nou proiect de infrastructură</h2>
+        <p>Proiectul include reabilitarea a 10 km de drumuri și modernizarea iluminatului public în cartierele noi.</p>
+      </div>
+      <div class="news-card">
+        <h2>Festivalul de vară revine în centrul orașului</h2>
+        <p>Evenimentul va avea loc în luna iulie și va include concerte, târguri tradiționale și activități pentru copii.</p>
+      </div>
+      <div style="margin-top: 40px; text-align: center;">
+  <h2>Urmărește cele mai noi știri video</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ehE9ABzfEds?si=6oeoMIcfhCoS7U6W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+      <div class="news-card">
+        <h2>Un nou centru medical s-a deschis în zona industrială</h2>
+        <p>Centrul oferă servicii de medicină generală, stomatologie și analize gratuite pentru pensionari.</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
