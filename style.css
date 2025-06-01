@@ -16,7 +16,7 @@ body {
     object-fit: cover;          /* se încadrează frumos */
     border: 3px solid white;    /* opțional: o margine albă */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* umbră ușoară */
-
+}
 /* Antet */
 header {
     background-color: #a30000;
