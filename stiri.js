@@ -36,10 +36,27 @@ Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoz
       }
     ];
   const main = document.getElementById("main-content");
+
+  function afiseazaListaStiri() {
+    main.innerHTML = `
+      <h1>Ultimele Știri</h1>
+      <div class="news-grid">
+        ${stiri.map(stire => `
+          <div class="news-card" onclick="afiseazaStire(${stire.id})">
+            ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="card-image">` : ''}
+            <h2>${stire.titlu}</h2>
+            <p>${stire.rezumat}</p>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
   
-  // Afișează toate cardurile
+  // Afișează o știre completă
   function afiseazaStire(id) {
     const stire = stiri.find(s => s.id === id);
+    if (!stire) return;
+  
     const continutCuParagrafe = stire.continut
       .split('\n\n')
       .map(p => `<p>${p}</p>`)
@@ -52,19 +69,6 @@ Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoz
         ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="full-image">` : ''}
         ${continutCuParagrafe}
       </div>
-    `;
-  }
-  
-  // Afișează o știre completă
-  function afiseazaStire(id) {
-    const stire = stiri.find(s => s.id === id);
-    if (!stire) return;
-  
-    main.innerHTML = `
-      <h1>${stire.titlu}</h1>
-      ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="stire-imagine">` : ''}
-      <p>${stire.continut}</p>
-      <a href="#" onclick="afiseazaListaStiri()" class="read-more">⟵ Înapoi la știri</a>
     `;
   }
   
