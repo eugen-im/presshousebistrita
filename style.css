@@ -66,6 +66,30 @@ main h2, main p {
     color: #333;
 }
 
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.news-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.news-card h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.news-card p {
+  color: #555;
+  font-size: 16px;
+}
+
 /* Footer */
 footer {
     background-color: #222;
