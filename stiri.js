@@ -30,11 +30,14 @@ const stiri = [
         id: 5,
         titlu: "Cod galben de ploi în Bistrița-Năsăud",
         rezumat: "Meteorologii anunță ploi torențiale și descărcări electrice în următoarele 24 de ore...",
-        continut: `În Carpații Orientali, estul Carpaților Meridionali și local în Munții Apuseni, Maramureș, estul Transilvaniei, nord-vestul Moldovei și nordul Munteniei instabilitatea atmosferică se va accentua și se va manifesta prin averse torențiale, descărcări electrice, intensificări de scurtă durată ale vântului (rafale în general de 50…70 km/h) și pe alocuri vijelii și căderi de grindină.
-Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoza pentru Transilvania în săptămâna 2-8 iunie: Începând din 2 iunie, valorile termice vor intra pe o pantă ascendentă, astfel încât până la finalul săptămânii se vor înregistra temperaturi mai apropiate de mediile climatologice. Maximele vor ajunge, în medie, la 22…27 de grade, iar minimele vor fi de 10…13 grade. Pot fi intervale cu averse.`,
-        imagine: `https://timponline.ro/wp-content/uploads/2025/05/cer-nori-vreme-meteo-p-2-990x654.jpg`,
-        continut: `Acesta este un continut de test.`,
-        imagine: "https://epitesti.ro/wp-content/uploads/2024/09/vreme-extrema-playtech.webp"
+        continut: `
+        <p>În Carpații Orientali, estul Carpaților Meridionali și local în Munții Apuseni, Maramureș, estul Transilvaniei,</p> 
+        <p>nord-vestul Moldovei și nordul Munteniei instabilitatea atmosferică se va accentua și se va manifesta prin averse torențiale</p>
+        <p>descărcări electrice, intensificări de scurtă durată ale vântului (rafale în general de 50…70 km/h) și pe alocuri vijelii și căderi de grindină.</p>
+        <p>Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoza pentru Transilvania în săptămâna 2-8 iunie: Începând din 2 iunie,</p>
+        <img src="https://timponline.ro/wp-content/uploads/2025/05/cer-nori-vreme-meteo-p-2-990x654.jpg" alt="Iluminat modern" style="width:100%; border-radius:10px; margin:10px 0;"> 
+        <p>valorile termice vor intra pe o pantă ascendentă, astfel încât până la finalul săptămânii se vor înregistra temperaturi mai apropiate de mediile climatologice.</p>
+        <p>Maximele vor ajunge, în medie, la 22…27 de grade, iar minimele vor fi de 10…13 grade. Pot fi intervale cu averse.</p>`
       }
     ];
   const main = document.getElementById("main-content");
@@ -64,13 +67,14 @@ Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoz
       .map(p => `<p>${p}</p>`)
       .join('');
   
-    main.innerHTML = `
+      main.innerHTML = `
       <button onclick="afiseazaListaStiri()">⬅ Înapoi</button>
       <div class="news-full">
         <h1>${stire.titlu}</h1>
         ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="full-image">` : ''}
-        ${continutCuParagrafe}
+        ${stire.continut} <!-- Afișează HTML direct -->
       </div>
+    `;
     `;
   }
   
