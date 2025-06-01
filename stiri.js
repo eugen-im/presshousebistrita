@@ -1,0 +1,53 @@
+// Array cu știrile
+const stiri = [
+    {
+      id: 1,
+      titlu: "Primăria anunță un nou proiect de infrastructură",
+      rezumat: "Reabilitarea a 10 km de drumuri și modernizarea iluminatului public...",
+      continut: "Proiectul include reabilitarea a 10 kilometri de drumuri și modernizarea iluminatului public în cartierele noi. Lucrările vor începe în luna iulie și vor dura 6 luni. Se estimează un buget de 12 milioane de lei."
+    },
+    {
+      id: 2,
+      titlu: "Festivalul de vară revine în centrul orașului",
+      rezumat: "Concerte, târguri tradiționale și activități pentru copii...",
+      continut: "Festivalul va avea loc între 15 și 20 iulie, cu scene în Piața Centrală, spectacole de dans, ateliere pentru copii și peste 20 de comercianți tradiționali. Invitați speciali: Subcarpați, Andra, Voltaj."
+    },
+    {
+      id: 3,
+      titlu: "Un nou centru medical s-a deschis în zona industrială",
+      rezumat: "Oferă medicină generală, stomatologie și analize gratuite pentru pensionari...",
+      continut: "Centrul funcționează de luni până vineri între orele 8-18 și este dotat cu aparatură modernă. Este primul centru care oferă analize gratuite pentru toți pensionarii din județ, pe baza programării."
+    }
+  ];
+  
+  const main = document.getElementById("main-content");
+  
+  // Afișează toate cardurile
+  function afiseazaListaStiri() {
+    main.innerHTML = `
+      <h1>Ultimele Știri</h1>
+      <div class="news-grid">
+        ${stiri.map(stire => `
+          <div class="news-card" onclick="afiseazaStire(${stire.id})">
+            <h2>${stire.titlu}</h2>
+            <p>${stire.rezumat}</p>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+  
+  // Afișează o știre completă
+  function afiseazaStire(id) {
+    const stire = stiri.find(s => s.id === id);
+    if (!stire) return;
+  
+    main.innerHTML = `
+      <h1>${stire.titlu}</h1>
+      <p>${stire.continut}</p>
+      <a href="#" onclick="afiseazaListaStiri()" class="read-more">⟵ Înapoi la știri</a>
+    `;
+  }
+  
+  // Afișăm lista la început
+  afiseazaListaStiri();

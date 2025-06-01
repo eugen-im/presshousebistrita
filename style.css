@@ -102,6 +102,19 @@ footer {
     margin-top: auto;
 }
 
+.read-more {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #d10000;
+    text-decoration: none;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+    color: #a00000;
+  }
+
 /* Responsive: pentru telefoane */
 @media (max-width: 600px) {
     nav {
