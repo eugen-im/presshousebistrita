@@ -1,83 +1,71 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <title>Press House Bistrița</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      background-color: #d10000; /* roșu intens */
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo-title {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin-right: 15px;
-    }
-
-    .site-title {
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press House Bistrița</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        main {
+            padding: 2rem;
+        }
+        h1 {
+            color: #333;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+    </style>
+    <a href="#" class="active">Acasă</a>
 </head>
 <body>
-
-  <header>
-    <div class="logo-title">
-      <img src="logo.png" alt="Logo" class="logo">
-      <div class="site-title">Press House Bistrița</div>
-    </div>
+    <header>
+        <h1>Press House Bistrița</h1>
+    </header>
     <nav>
-      <ul>
-        <li><a href="index.html">Acasă</a></li>
-        <li><a href="stiri.html">Știri</a></li>
-        <li><a href="evenimente.html">Evenimente</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+        <a href="#">Acasă</a>
+        <a href="#">Știri</a>
+        <a href="#">Evenimente</a>
+        <a href="#">Contact</a>
     </nav>
-  </header>
-
+    <main>
+        <h2>Bun venit la Press House Bistrița!</h2>
+        <p>Urmărește cele mai noi știri și evenimente din municipiul Bistrița și județul Bistrița-Năsăud.</p>
+    </main>
+    <footer>
+        &copy; 2025 Press House Bistrița. Toate drepturile rezervate.
+    </footer>
 </body>
-  <main>
-      <h2>Urmărește cele mai noi știri video</h2>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ehE9ABzfEds?si=6oeoMIcfhCoS7U6W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-  </main>
 </html>
