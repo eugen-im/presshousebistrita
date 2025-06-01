@@ -77,8 +77,13 @@
     .news-card {
       background-color: white;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
     }
 
     .news-card h2 {
@@ -90,59 +95,11 @@
     .news-card p {
       color: #555;
       font-size: 16px;
+    }
 
-      <style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-
-  .news-section {
-    padding: 40px 20px;
-  }
-
-  .news-section h2 {
-    color: #e60000;
-    margin-bottom: 20px;
-  }
-
-  .news-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .news-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease;
-  }
-
-  .news-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .news-card h3 {
-    margin-top: 0;
-    color: #333;
-  }
-
-  .news-card p {
-    color: #555;
-  }
-
-  .highlight {
-    color: #0074d9;
-    font-weight: bold;
-  }
-</style>
+    .highlight {
+      color: #0074d9;
+      font-weight: bold;
     }
   </style>
 </head>
