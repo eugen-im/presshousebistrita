@@ -105,7 +105,23 @@ main h2, main p {
     display: block;
     border-radius: 8px;
   }
-
+  .news-full {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .news-full p {
+    margin-bottom: 1em;
+  }
+  
+  .full-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 1em;
+  }
 /* Footer */
 footer {
     background-color: #222;

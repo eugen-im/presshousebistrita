@@ -30,24 +30,27 @@ const stiri = [
         id: 5,
         titlu: "Cod galben de ploi în Bistrița-Năsăud",
         rezumat: "Meteorologii anunță ploi torențiale și descărcări electrice în următoarele 24 de ore...",
-        continut: "Administrația Națională de Meteorologie a emis o avertizare cod galben de ploi abundente. Se recomandă evitarea deplasărilor în zonele afectate și atenție sporită în trafic.",
+        continut: `În Carpații Orientali, estul Carpaților Meridionali și local în Munții Apuseni, Maramureș, estul Transilvaniei, nord-vestul Moldovei și nordul Munteniei instabilitatea atmosferică se va accentua și se va manifesta prin averse torențiale, descărcări electrice, intensificări de scurtă durată ale vântului (rafale în general de 50…70 km/h) și pe alocuri vijelii și căderi de grindină.
+Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoza pentru Transilvania în săptămâna 2-8 iunie: Începând din 2 iunie, valorile termice vor intra pe o pantă ascendentă, astfel încât până la finalul săptămânii se vor înregistra temperaturi mai apropiate de mediile climatologice. Maximele vor ajunge, în medie, la 22…27 de grade, iar minimele vor fi de 10…13 grade. Pot fi intervale cu averse.`,
         imagine: "https://timponline.ro/wp-content/uploads/2025/05/cer-nori-vreme-meteo-p-2-990x654.jpg" // sau un link extern: "https://..."
       }
     ];
   const main = document.getElementById("main-content");
   
   // Afișează toate cardurile
-  function afiseazaListaStiri() {
+  function afiseazaStire(id) {
+    const stire = stiri.find(s => s.id === id);
+    const continutCuParagrafe = stire.continut
+      .split('\n\n')
+      .map(p => `<p>${p}</p>`)
+      .join('');
+  
     main.innerHTML = `
-      <h1>Ultimele Știri</h1>
-      <div class="news-grid">
-        ${stiri.map(stire => `
-          <div class="news-card" onclick="afiseazaStire(${stire.id})">
-            ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="card-image">` : ''}
-            <h2>${stire.titlu}</h2>
-            <p>${stire.rezumat}</p>
-          </div>
-        `).join("")}
+      <button onclick="afiseazaListaStiri()">⬅ Înapoi</button>
+      <div class="news-full">
+        <h1>${stire.titlu}</h1>
+        ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="full-image">` : ''}
+        ${continutCuParagrafe}
       </div>
     `;
   }
