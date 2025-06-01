@@ -9,12 +9,28 @@ body {
     flex-direction: column;
 }
 
+.logo-circular {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;         /* face imaginea rotundă */
+    object-fit: cover;          /* se încadrează frumos */
+    border: 3px solid white;    /* opțional: o margine albă */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* umbră ușoară */
+
 /* Antet */
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     background-color: #222;
+    padding: 1rem;
     color: white;
-    padding: 1rem 0;
-    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
 }
 
 /* Navigație */
