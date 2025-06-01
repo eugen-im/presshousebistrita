@@ -73,4 +73,6 @@ Cantitățile de apă vor fi de 15…25 l/mp și izolat de 30…40 l/mp. Prognoz
   }
   
   // Afișăm lista la început
-  afiseazaListaStiri();
+  document.addEventListener("DOMContentLoaded", function () {
+    afiseazaListaStiri();
+  });
