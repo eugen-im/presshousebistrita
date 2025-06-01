@@ -4,7 +4,8 @@ const stiri = [
         id: 1,
         titlu: "Primăria anunță un nou proiect de infrastructură",
         rezumat: "Reabilitarea a 10 km de drumuri și modernizarea iluminatului public...",
-        continut: "Proiectul include reabilitarea a 10 kilometri de drumuri și modernizarea iluminatului public în cartierele noi. Lucrările vor începe în luna iulie și vor dura 6 luni. Se estimează un buget de 12 milioane de lei."
+        continut: "Proiectul include reabilitarea a 10 kilometri de drumuri și modernizarea iluminatului public în cartierele noi. Lucrările vor începe în luna iulie și vor dura 6 luni. Se estimează un buget de 12 milioane de lei.",
+        imagine: "https://igfgrup.ro/wp-content/uploads/2023/03/Iluminat-public-si-festiv-1.jpg"
       },
       {
         id: 2,
@@ -22,7 +23,8 @@ const stiri = [
         id: 4,
         titlu: "Școala de vară pentru elevi talentați",
         rezumat: "Peste 100 de elevi participă la ateliere educaționale și creative în luna august...",
-        continut: "Programul include sesiuni de robotică, arte vizuale, jurnalism, scriere creativă și dezvoltare personală. Școala se desfășoară între 1 și 14 august, în parteneriat cu Inspectoratul Școlar."
+        continut: "Programul include sesiuni de robotică, arte vizuale, jurnalism, scriere creativă și dezvoltare personală. Școala se desfășoară între 1 și 14 august, în parteneriat cu Inspectoratul Școlar.",
+        imagine: "https://reptiland.ro/wp-content/uploads/2024/07/scoala-de-vara-reptiland.png"
       },
       {
         id: 5,
@@ -31,8 +33,7 @@ const stiri = [
         continut: "Administrația Națională de Meteorologie a emis o avertizare cod galben de ploi abundente. Se recomandă evitarea deplasărilor în zonele afectate și atenție sporită în trafic.",
         imagine: "https://timponline.ro/wp-content/uploads/2025/05/cer-nori-vreme-meteo-p-2-990x654.jpg" // sau un link extern: "https://..."
       }
-
-  ];
+    ];
   const main = document.getElementById("main-content");
   
   // Afișează toate cardurile
