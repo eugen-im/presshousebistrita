@@ -19,20 +19,11 @@ body {
 
 /* Antet */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
     background-color: #222;
-    padding: 1rem;
     color: white;
+    padding: 1rem 0;
+    text-align: center;
 }
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
 /* Navigație */
 nav {
     background-color: #444;
