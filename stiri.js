@@ -23,7 +23,15 @@ const stiri = [
         titlu: "Școala de vară pentru elevi talentați",
         rezumat: "Peste 100 de elevi participă la ateliere educaționale și creative în luna august...",
         continut: "Programul include sesiuni de robotică, arte vizuale, jurnalism, scriere creativă și dezvoltare personală. Școala se desfășoară între 1 și 14 august, în parteneriat cu Inspectoratul Școlar."
+      },
+      {
+        id: 5,
+        titlu: "Cod galben de ploi în Bistrița-Năsăud",
+        rezumat: "Meteorologii anunță ploi torențiale și descărcări electrice în următoarele 24 de ore...",
+        continut: "Administrația Națională de Meteorologie a emis o avertizare cod galben de ploi abundente. Se recomandă evitarea deplasărilor în zonele afectate și atenție sporită în trafic.",
+        imagine: "https://timponline.ro/wp-content/uploads/2025/05/cer-nori-vreme-meteo-p-2-990x654.jpg" // sau un link extern: "https://..."
       }
+
   ];
   const main = document.getElementById("main-content");
   
@@ -34,6 +42,7 @@ const stiri = [
       <div class="news-grid">
         ${stiri.map(stire => `
           <div class="news-card" onclick="afiseazaStire(${stire.id})">
+            ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="card-image">` : ''}
             <h2>${stire.titlu}</h2>
             <p>${stire.rezumat}</p>
           </div>
@@ -49,6 +58,7 @@ const stiri = [
   
     main.innerHTML = `
       <h1>${stire.titlu}</h1>
+      ${stire.imagine ? `<img src="${stire.imagine}" alt="Imagine stire" class="stire-imagine">` : ''}
       <p>${stire.continut}</p>
       <a href="#" onclick="afiseazaListaStiri()" class="read-more">⟵ Înapoi la știri</a>
     `;
